@@ -23,7 +23,7 @@ export default function Home() {
    //   event.preventDefault();
   
       try {
-        const response = await axios.post('http://localhost:3001/num1', { num1 });
+        const response = await axios.post('http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/num1', { num1 });
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -34,7 +34,7 @@ export default function Home() {
    //   event.preventDefault();
   
       try {
-        const response = await axios.post('http://localhost:3001/num2', { num2 });
+        const response = await axios.post('http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/num2', { num2 });
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -42,14 +42,14 @@ export default function Home() {
     };
 
    useEffect(() => {
-      axios.get(`http://localhost:3001/edge_server_data_1`)
+      axios.get(`http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/edge_server_data_1`)
          .then(response => {
                   setData1(response.data);
                   console.log(data1.edge_server_memory);
                })
          .catch((error) => console.log(error));
 
-      axios.get(`http://localhost:3001/edge_server_data_2`)
+      axios.get(`http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/edge_server_data_2`)
          .then(response => {
                   setData2(response.data);
                })
