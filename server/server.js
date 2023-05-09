@@ -1,23 +1,3 @@
-blater
-#5850
-
-
-
-blater — 2021.03.01. 오후 1:32
-大田区東海
-blater — 오늘 오후 7:53
-cap.cgkniduhfo36.ap-northeast-2.rds.amazonaws.com
-blater — 오늘 오후 8:56
-const express = require("express"); // npm i express | yarn add express
-const cors    = require("cors");    // npm i cors | yarn add cors
-const mysql   = require("mysql");   // npm i mysql | yarn add mysql
-const app     = express();
-const bodyParser = require('body-parser');
-const moment  = require('moment');
-확장
-message.txt
-5KB
-﻿
 const express = require("express"); // npm i express | yarn add express
 const cors    = require("cors");    // npm i cors | yarn add cors
 const mysql   = require("mysql");   // npm i mysql | yarn add mysql
