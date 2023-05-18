@@ -23,7 +23,7 @@ export default function Home() {
    //   event.preventDefault();
   
       try {
-        const response = await axios.post('http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/num1', { num1 });
+        const response = await axios.post('http://192.168.0.2:3001/num1', { num1 });
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -34,7 +34,7 @@ export default function Home() {
    //   event.preventDefault();
   
       try {
-        const response = await axios.post('http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/num2', { num2 });
+        const response = await axios.post('http://192.168.0.2:3001/num2', { num2 });
         console.log(response.data);
       } catch (error) {
         console.error(error);
@@ -42,14 +42,14 @@ export default function Home() {
     };
 
    useEffect(() => {
-      axios.get(`http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/edge_server_data_1`)
+      axios.get(`http://192.168.0.2:3001/edge_server_data_1`)
          .then(response => {
                   setData1(response.data);
                   console.log(data1.edge_server_memory);
                })
          .catch((error) => console.log(error));
 
-      axios.get(`http://ec2-13-125-207-141.ap-northeast-2.compute.amazonaws.com:3001/edge_server_data_2`)
+      axios.get(`http://192.168.0.2:3001/edge_server_data_2`)
          .then(response => {
                   setData2(response.data);
                })
@@ -66,7 +66,7 @@ export default function Home() {
          {/* <Box className={classNames(Style.avatar, Style.shadowed)} alt={'image of developer'} style={{background: info.gradient}} component={'img'} src={me} width={{xs: '35vh', md: '40vh'}}
               height={{xs: '35vh', md: '40vh'}}
               borderRadius={'50%'} p={'0.75rem'} mb={{xs: '1rem', sm: 0}} mr={{xs: 0, md: '2rem'}}/> */}
-         <div style={{boxShadow: '0 10px 20px rgba(0,0,0,0.19)', float: 'left', padding: '10px', width: '30%', marginLeft: '15%', paddingTop: '30px' }}>
+         <div style={{boxShadow: '0 10px 20px rgba(0,0,0,0.19)', float: 'left', padding: '10px', width: '30%', marginLeft: '15%', paddingTop: '20px' }}>
             <h2>1번 기지국</h2>
             <h2><br/></h2>
                {data1.map((item) => (
@@ -78,7 +78,7 @@ export default function Home() {
                      ['edge_server_data', item.edge_server_data]
                   ]}
                   width="100%"
-                  height="400px"
+                  height="300px"
                />
                ))}
             <table className = "edge_server_1">
@@ -109,7 +109,7 @@ export default function Home() {
             <div className = {Style.submitbutton}>
                <form onSubmit={handleSubmit}>
                   <label>
-                  데이터 수:
+                  데이터 수&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:&nbsp;&nbsp;&nbsp;
                   <input type="text" value={num1} onChange={(event) => setnum1(event.target.value)} />
                   </label>
                   <button type="submit">변경</button>
@@ -129,7 +129,7 @@ export default function Home() {
                </tbody>
             </table>
          </div> */}
-         <div style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19)', float: 'right', padding: '10px', width: '30%', marginRight: '15%', whiteSpace: 'pre-wrap', paddingTop: '30px'  }}>
+         <div style={{ boxShadow: '0 10px 20px rgba(0,0,0,0.19)', float: 'right', padding: '10px', width: '30%', marginRight: '15%', whiteSpace: 'pre-wrap', paddingTop: '20px'  }}>
             <h2>2번 기지국</h2>
             <h2><br/></h2>
             {data2.map((item) => (
@@ -141,7 +141,7 @@ export default function Home() {
                      ['edge_server_data', item.edge_server_data]
                   ]}
                   width="100%"
-                  height="400px"
+                  height="300px"
                />
                ))}
             <table className = "edge_server_1">
